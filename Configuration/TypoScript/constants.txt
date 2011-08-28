@@ -1,0 +1,14 @@
+plugin.tx_items {
+	view {
+		# cat=plugin.tx_items/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:items/Resources/Private/Templates/
+		# cat=plugin.tx_items/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:items/Resources/Private/Partials/
+		# cat=plugin.tx_items/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:items/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_items//a; type=int+; label=Default storage PID
+		storagePid = 
+	}
+}

@@ -1,0 +1,30 @@
+plugin.tx_items {
+	view {
+		templateRootPath = {$plugin.tx_items.view.templateRootPath}
+		partialRootPath = {$plugin.tx_items.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_items.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_items.persistence.storagePid}
+	}
+}
+
+plugin.tx_items._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-items table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-items table th {
+		font-weight:bold;
+	}
+
+	.tx-items table td {
+		vertical-align:top;
+	}
+)

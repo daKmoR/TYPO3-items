@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'items'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_items_domain_model_item">Item</label>
+			<label index="tx_items_domain_model_item.name">Name</label>
+			<label index="tx_items_domain_model_item.preview">Preview</label>
+			<label index="tx_items_domain_model_item.body_text">Body Text</label>
+			<label index="tx_items_domain_model_item.priority_item">Priority Item</label>
+			<label index="tx_items_domain_model_item.start_date_time">Start Date Time</label>
+			<label index="tx_items_domain_model_item.end_date_time">End Date Time</label>
+			<label index="tx_items_domain_model_item.categories">Categories</label>
+			<label index="tx_items_domain_model_item.item_asset">Item Asset</label>
+			<label index="tx_items_domain_model_item.related">Related</label>
+			<label index="tx_items_domain_model_category">Category</label>
+			<label index="tx_items_domain_model_category.name">Name</label>
+			<label index="tx_items_domain_model_itemasset">Item Asset</label>
+			<label index="tx_items_domain_model_itemasset.use_in_preview">Use In Preview</label>
+			<label index="tx_items_domain_model_itemasset.add_as_download">Add As Download</label>
+			<label index="tx_items_domain_model_itemasset.asset">Asset</label>
+			<label index="tx_items_domain_model_asset">Asset</label>
+		</languageKey>
+	</data>
+</T3locallang>

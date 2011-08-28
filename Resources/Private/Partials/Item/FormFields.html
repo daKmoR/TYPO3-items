@@ -1,0 +1,24 @@
+<label for="name">
+	<f:translate key="tx_items_domain_model_item.name" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="name" /><br />
+<label for="preview">
+	<f:translate key="tx_items_domain_model_item.preview" />
+</label><br />
+	<f:form.textfield property="preview" /><br />
+<label for="bodyText">
+	<f:translate key="tx_items_domain_model_item.body_text" />
+</label><br />
+	<f:form.textfield property="bodyText" /><br />
+<label for="priorityItem">
+	<f:translate key="tx_items_domain_model_item.priority_item" />
+</label><br />
+	<f:form.checkbox property="priorityItem" value="1" /><br />
+<label for="startDateTime">
+	<f:translate key="tx_items_domain_model_item.start_date_time" />
+</label><br />
+	<f:form.textfield property="startDateTime"  value="{item.startDateTime->f:format.date()}" /><br />
+<label for="endDateTime">
+	<f:translate key="tx_items_domain_model_item.end_date_time" />
+</label><br />
+	<f:form.textfield property="endDateTime" /><br />
