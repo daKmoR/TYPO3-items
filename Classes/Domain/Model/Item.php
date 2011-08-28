@@ -85,18 +85,18 @@ class Tx_Items_Domain_Model_Item extends Tx_Extbase_DomainObject_AbstractEntity 
 	protected $categories;
 
 	/**
-	 * itemAsset
+	 * itemAssets
 	 *
 	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Items_Domain_Model_ItemAsset>
 	 */
-	protected $itemAsset;
+	protected $itemAssets;
 
 	/**
-	 * related
+	 * relatedItems
 	 *
 	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Items_Domain_Model_Item>
 	 */
-	protected $related;
+	protected $relatedItems;
 
 	/**
 	 * __construct
@@ -121,9 +121,9 @@ class Tx_Items_Domain_Model_Item extends Tx_Extbase_DomainObject_AbstractEntity 
 		 */
 		$this->categories = new Tx_Extbase_Persistence_ObjectStorage();
 		
-		$this->itemAsset = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->itemAssets = new Tx_Extbase_Persistence_ObjectStorage();
 		
-		$this->related = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->relatedItems = new Tx_Extbase_Persistence_ObjectStorage();
 	}
 
 	/**
@@ -233,7 +233,7 @@ class Tx_Items_Domain_Model_Item extends Tx_Extbase_DomainObject_AbstractEntity 
 	/**
 	 * Returns the endDateTime
 	 *
-	 * @return string $endDateTime
+	 * @return DateTime $endDateTime
 	 */
 	public function getEndDateTime() {
 		return $this->endDateTime;
@@ -242,7 +242,7 @@ class Tx_Items_Domain_Model_Item extends Tx_Extbase_DomainObject_AbstractEntity 
 	/**
 	 * Sets the endDateTime
 	 *
-	 * @param string $endDateTime
+	 * @param DateTime $endDateTime
 	 * @return void
 	 */
 	public function setEndDateTime($endDateTime) {
@@ -295,7 +295,7 @@ class Tx_Items_Domain_Model_Item extends Tx_Extbase_DomainObject_AbstractEntity 
 	 * @return void
 	 */
 	public function addItemAsset(Tx_Items_Domain_Model_ItemAsset $itemAsset) {
-		$this->itemAsset->attach($itemAsset);
+		$this->itemAssets->attach($itemAsset);
 	}
 
 	/**
@@ -305,65 +305,65 @@ class Tx_Items_Domain_Model_Item extends Tx_Extbase_DomainObject_AbstractEntity 
 	 * @return void
 	 */
 	public function removeItemAsset(Tx_Items_Domain_Model_ItemAsset $itemAssetToRemove) {
-		$this->itemAsset->detach($itemAssetToRemove);
+		$this->itemAssets->detach($itemAssetToRemove);
 	}
 
 	/**
-	 * Returns the itemAsset
+	 * Returns the itemAssets
 	 *
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Items_Domain_Model_ItemAsset> $itemAsset
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Items_Domain_Model_ItemAsset> $itemAssets
 	 */
-	public function getItemAsset() {
-		return $this->itemAsset;
+	public function getItemAssets() {
+		return $this->itemAssets;
 	}
 
 	/**
-	 * Sets the itemAsset
+	 * Sets the itemAssets
 	 *
-	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Items_Domain_Model_ItemAsset> $itemAsset
+	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Items_Domain_Model_ItemAsset> $itemAssets
 	 * @return void
 	 */
-	public function setItemAsset(Tx_Extbase_Persistence_ObjectStorage $itemAsset) {
-		$this->itemAsset = $itemAsset;
+	public function setItemAssets(Tx_Extbase_Persistence_ObjectStorage $itemAssets) {
+		$this->itemAssets = $itemAssets;
 	}
 
 	/**
 	 * Adds a Item
 	 *
-	 * @param Tx_Items_Domain_Model_Item $related
+	 * @param Tx_Items_Domain_Model_Item $relatedItem
 	 * @return void
 	 */
-	public function addRelated(Tx_Items_Domain_Model_Item $related) {
-		$this->related->attach($related);
+	public function addRelatedItem(Tx_Items_Domain_Model_Item $relatedItem) {
+		$this->relatedItems->attach($relatedItem);
 	}
 
 	/**
 	 * Removes a Item
 	 *
-	 * @param Tx_Items_Domain_Model_Item $relatedToRemove The Item to be removed
+	 * @param Tx_Items_Domain_Model_Item $relatedItemToRemove The Item to be removed
 	 * @return void
 	 */
-	public function removeRelated(Tx_Items_Domain_Model_Item $relatedToRemove) {
-		$this->related->detach($relatedToRemove);
+	public function removeRelatedItem(Tx_Items_Domain_Model_Item $relatedItemToRemove) {
+		$this->relatedItems->detach($relatedItemToRemove);
 	}
 
 	/**
-	 * Returns the related
+	 * Returns the relatedItems
 	 *
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Items_Domain_Model_Item> $related
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Items_Domain_Model_Item> $relatedItems
 	 */
-	public function getRelated() {
-		return $this->related;
+	public function getRelatedItems() {
+		return $this->relatedItems;
 	}
 
 	/**
-	 * Sets the related
+	 * Sets the relatedItems
 	 *
-	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Items_Domain_Model_Item> $related
+	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Items_Domain_Model_Item> $relatedItems
 	 * @return void
 	 */
-	public function setRelated(Tx_Extbase_Persistence_ObjectStorage $related) {
-		$this->related = $related;
+	public function setRelatedItems(Tx_Extbase_Persistence_ObjectStorage $relatedItems) {
+		$this->relatedItems = $relatedItems;
 	}
 
 }

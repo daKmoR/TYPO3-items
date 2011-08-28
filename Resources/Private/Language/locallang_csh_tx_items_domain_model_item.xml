@@ -14,8 +14,8 @@
 			<label index="start_date_time.description">startDateTime</label>
 			<label index="end_date_time.description">endDateTime</label>
 			<label index="categories.description">categories</label>
-			<label index="item_asset.description">itemAsset</label>
-			<label index="related.description">related</label>
+			<label index="item_assets.description">itemAssets</label>
+			<label index="related_items.description">relatedItems</label>
 		</languageKey>
 	</data>
 </T3locallang>

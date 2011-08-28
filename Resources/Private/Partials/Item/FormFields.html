@@ -21,4 +21,4 @@
 <label for="endDateTime">
 	<f:translate key="tx_items_domain_model_item.end_date_time" />
 </label><br />
-	<f:form.textfield property="endDateTime" /><br />
+	<f:form.textfield property="endDateTime"  value="{item.endDateTime->f:format.date()}" /><br />

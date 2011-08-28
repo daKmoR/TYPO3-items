@@ -43,6 +43,13 @@ class Tx_Items_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractEnt
 	protected $name;
 
 	/**
+	 * parentCategory
+	 *
+	 * @var Tx_Items_Domain_Model_Category
+	 */
+	protected $parentCategory;
+
+	/**
 	 * __construct
 	 *
 	 * @return void
@@ -68,6 +75,25 @@ class Tx_Items_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractEnt
 	 */
 	public function setName($name) {
 		$this->name = $name;
+	}
+
+	/**
+	 * Returns the parentCategory
+	 *
+	 * @return Tx_Items_Domain_Model_Category $parentCategory
+	 */
+	public function getParentCategory() {
+		return $this->parentCategory;
+	}
+
+	/**
+	 * Sets the parentCategory
+	 *
+	 * @param Tx_Items_Domain_Model_Category $parentCategory
+	 * @return void
+	 */
+	public function setParentCategory(Tx_Items_Domain_Model_Category $parentCategory) {
+		$this->parentCategory = $parentCategory;
 	}
 
 }

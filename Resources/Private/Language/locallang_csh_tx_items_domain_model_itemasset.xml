@@ -9,6 +9,10 @@
 	<languageKey index="default" type="array">
 			<label index="use_in_preview.description">useInPreview</label>
 			<label index="add_as_download.description">addAsDownload</label>
+			<label index="override_name.description">overrideName</label>
+			<label index="override_description.description">overrideDescription</label>
+			<label index="override_copyright.description">overrideCopyright</label>
+			<label index="override_caption.description">overrideCaption</label>
 			<label index="asset.description">asset</label>
 		</languageKey>
 	</data>

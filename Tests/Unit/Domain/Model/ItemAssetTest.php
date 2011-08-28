@@ -98,6 +98,74 @@ class Tx_Items_Domain_Model_ItemAssetTest extends Tx_Extbase_Tests_Unit_BaseTest
 	/**
 	 * @test
 	 */
+	public function getOverrideNameReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setOverrideNameForStringSetsOverrideName() { 
+		$this->fixture->setOverrideName('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getOverrideName()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getOverrideDescriptionReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setOverrideDescriptionForStringSetsOverrideDescription() { 
+		$this->fixture->setOverrideDescription('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getOverrideDescription()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getOverrideCopyrightReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setOverrideCopyrightForStringSetsOverrideCopyright() { 
+		$this->fixture->setOverrideCopyright('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getOverrideCopyright()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getOverrideCaptionReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setOverrideCaptionForStringSetsOverrideCaption() { 
+		$this->fixture->setOverrideCaption('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getOverrideCaption()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
 	public function getAssetReturnsInitialValueForTx_Items_Domain_Model_Asset() { 
 		$this->assertEquals(
 			NULL,

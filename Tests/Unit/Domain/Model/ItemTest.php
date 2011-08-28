@@ -137,19 +137,12 @@ class Tx_Items_Domain_Model_ItemTest extends Tx_Extbase_Tests_Unit_BaseTestCase 
 	/**
 	 * @test
 	 */
-	public function getEndDateTimeReturnsInitialValueForString() { }
+	public function getEndDateTimeReturnsInitialValueForDateTime() { }
 
 	/**
 	 * @test
 	 */
-	public function setEndDateTimeForStringSetsEndDateTime() { 
-		$this->fixture->setEndDateTime('Conceived at T3CON10');
-
-		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getEndDateTime()
-		);
-	}
+	public function setEndDateTimeForDateTimeSetsEndDateTime() { }
 	
 	/**
 	 * @test
@@ -212,33 +205,33 @@ class Tx_Items_Domain_Model_ItemTest extends Tx_Extbase_Tests_Unit_BaseTestCase 
 	/**
 	 * @test
 	 */
-	public function getItemAssetReturnsInitialValueForObjectStorageContainingTx_Items_Domain_Model_ItemAsset() { 
+	public function getItemAssetsReturnsInitialValueForObjectStorageContainingTx_Items_Domain_Model_ItemAsset() { 
 		$newObjectStorage = new Tx_Extbase_Persistence_ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->fixture->getItemAsset()
+			$this->fixture->getItemAssets()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setItemAssetForObjectStorageContainingTx_Items_Domain_Model_ItemAssetSetsItemAsset() { 
+	public function setItemAssetsForObjectStorageContainingTx_Items_Domain_Model_ItemAssetSetsItemAssets() { 
 		$itemAsset = new Tx_Items_Domain_Model_ItemAsset();
-		$objectStorageHoldingExactlyOneItemAsset = new Tx_Extbase_Persistence_ObjectStorage();
-		$objectStorageHoldingExactlyOneItemAsset->attach($itemAsset);
-		$this->fixture->setItemAsset($objectStorageHoldingExactlyOneItemAsset);
+		$objectStorageHoldingExactlyOneItemAssets = new Tx_Extbase_Persistence_ObjectStorage();
+		$objectStorageHoldingExactlyOneItemAssets->attach($itemAsset);
+		$this->fixture->setItemAssets($objectStorageHoldingExactlyOneItemAssets);
 
 		$this->assertSame(
-			$objectStorageHoldingExactlyOneItemAsset,
-			$this->fixture->getItemAsset()
+			$objectStorageHoldingExactlyOneItemAssets,
+			$this->fixture->getItemAssets()
 		);
 	}
 	
 	/**
 	 * @test
 	 */
-	public function addItemAssetToObjectStorageHoldingItemAsset() {
+	public function addItemAssetToObjectStorageHoldingItemAssets() {
 		$itemAsset = new Tx_Items_Domain_Model_ItemAsset();
 		$objectStorageHoldingExactlyOneItemAsset = new Tx_Extbase_Persistence_ObjectStorage();
 		$objectStorageHoldingExactlyOneItemAsset->attach($itemAsset);
@@ -246,14 +239,14 @@ class Tx_Items_Domain_Model_ItemTest extends Tx_Extbase_Tests_Unit_BaseTestCase 
 
 		$this->assertEquals(
 			$objectStorageHoldingExactlyOneItemAsset,
-			$this->fixture->getItemAsset()
+			$this->fixture->getItemAssets()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function removeItemAssetFromObjectStorageHoldingItemAsset() {
+	public function removeItemAssetFromObjectStorageHoldingItemAssets() {
 		$itemAsset = new Tx_Items_Domain_Model_ItemAsset();
 		$localObjectStorage = new Tx_Extbase_Persistence_ObjectStorage();
 		$localObjectStorage->attach($itemAsset);
@@ -263,65 +256,65 @@ class Tx_Items_Domain_Model_ItemTest extends Tx_Extbase_Tests_Unit_BaseTestCase 
 
 		$this->assertEquals(
 			$localObjectStorage,
-			$this->fixture->getItemAsset()
+			$this->fixture->getItemAssets()
 		);
 	}
 	
 	/**
 	 * @test
 	 */
-	public function getRelatedReturnsInitialValueForObjectStorageContainingTx_Items_Domain_Model_Item() { 
+	public function getRelatedItemsReturnsInitialValueForObjectStorageContainingTx_Items_Domain_Model_Item() { 
 		$newObjectStorage = new Tx_Extbase_Persistence_ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->fixture->getRelated()
+			$this->fixture->getRelatedItems()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setRelatedForObjectStorageContainingTx_Items_Domain_Model_ItemSetsRelated() { 
-		$related = new Tx_Items_Domain_Model_Item();
-		$objectStorageHoldingExactlyOneRelated = new Tx_Extbase_Persistence_ObjectStorage();
-		$objectStorageHoldingExactlyOneRelated->attach($related);
-		$this->fixture->setRelated($objectStorageHoldingExactlyOneRelated);
+	public function setRelatedItemsForObjectStorageContainingTx_Items_Domain_Model_ItemSetsRelatedItems() { 
+		$relatedItem = new Tx_Items_Domain_Model_Item();
+		$objectStorageHoldingExactlyOneRelatedItems = new Tx_Extbase_Persistence_ObjectStorage();
+		$objectStorageHoldingExactlyOneRelatedItems->attach($relatedItem);
+		$this->fixture->setRelatedItems($objectStorageHoldingExactlyOneRelatedItems);
 
 		$this->assertSame(
-			$objectStorageHoldingExactlyOneRelated,
-			$this->fixture->getRelated()
+			$objectStorageHoldingExactlyOneRelatedItems,
+			$this->fixture->getRelatedItems()
 		);
 	}
 	
 	/**
 	 * @test
 	 */
-	public function addRelatedToObjectStorageHoldingRelated() {
-		$related = new Tx_Items_Domain_Model_Item();
-		$objectStorageHoldingExactlyOneRelated = new Tx_Extbase_Persistence_ObjectStorage();
-		$objectStorageHoldingExactlyOneRelated->attach($related);
-		$this->fixture->addRelated($related);
+	public function addRelatedItemToObjectStorageHoldingRelatedItems() {
+		$relatedItem = new Tx_Items_Domain_Model_Item();
+		$objectStorageHoldingExactlyOneRelatedItem = new Tx_Extbase_Persistence_ObjectStorage();
+		$objectStorageHoldingExactlyOneRelatedItem->attach($relatedItem);
+		$this->fixture->addRelatedItem($relatedItem);
 
 		$this->assertEquals(
-			$objectStorageHoldingExactlyOneRelated,
-			$this->fixture->getRelated()
+			$objectStorageHoldingExactlyOneRelatedItem,
+			$this->fixture->getRelatedItems()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function removeRelatedFromObjectStorageHoldingRelated() {
-		$related = new Tx_Items_Domain_Model_Item();
+	public function removeRelatedItemFromObjectStorageHoldingRelatedItems() {
+		$relatedItem = new Tx_Items_Domain_Model_Item();
 		$localObjectStorage = new Tx_Extbase_Persistence_ObjectStorage();
-		$localObjectStorage->attach($related);
-		$localObjectStorage->detach($related);
-		$this->fixture->addRelated($related);
-		$this->fixture->removeRelated($related);
+		$localObjectStorage->attach($relatedItem);
+		$localObjectStorage->detach($relatedItem);
+		$this->fixture->addRelatedItem($relatedItem);
+		$this->fixture->removeRelatedItem($relatedItem);
 
 		$this->assertEquals(
 			$localObjectStorage,
-			$this->fixture->getRelated()
+			$this->fixture->getRelatedItems()
 		);
 	}
 	

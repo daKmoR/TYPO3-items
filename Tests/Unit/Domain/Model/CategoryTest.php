@@ -68,5 +68,28 @@ class Tx_Items_Domain_Model_CategoryTest extends Tx_Extbase_Tests_Unit_BaseTestC
 		);
 	}
 	
+	/**
+	 * @test
+	 */
+	public function getParentCategoryReturnsInitialValueForTx_Items_Domain_Model_Category() { 
+		$this->assertEquals(
+			NULL,
+			$this->fixture->getParentCategory()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setParentCategoryForTx_Items_Domain_Model_CategorySetsParentCategory() { 
+		$dummyObject = new Tx_Items_Domain_Model_Category();
+		$this->fixture->setParentCategory($dummyObject);
+
+		$this->assertSame(
+			$dummyObject,
+			$this->fixture->getParentCategory()
+		);
+	}
+	
 }
 ?>

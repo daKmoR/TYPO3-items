@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_items_domain_model_item'] = array(
 	'ctrl' => $TCA['tx_items_domain_model_item']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, preview, body_text, priority_item, start_date_time, end_date_time, categories, item_asset, related',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, preview, body_text, priority_item, start_date_time, end_date_time, categories, item_assets, related_items',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, preview, body_text, priority_item, start_date_time, end_date_time, categories, item_asset, related,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, preview, body_text, priority_item, start_date_time, end_date_time, categories, item_assets, related_items,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -188,9 +188,9 @@ $TCA['tx_items_domain_model_item'] = array(
 				),
 			),
 		),
-		'item_asset' => array(
+		'item_assets' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_item.item_asset',
+			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_item.item_assets',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_items_domain_model_itemasset',
@@ -205,9 +205,9 @@ $TCA['tx_items_domain_model_item'] = array(
 				),
 			),
 		),
-		'related' => array(
+		'related_items' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_item.related',
+			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_item.related_items',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_items_domain_model_item',

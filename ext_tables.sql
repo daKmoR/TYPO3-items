@@ -13,8 +13,8 @@ CREATE TABLE tx_items_domain_model_item (
 	start_date_time int(11) DEFAULT '0' NOT NULL,
 	end_date_time int(11) DEFAULT '0' NOT NULL,
 	categories int(11) unsigned DEFAULT '0' NOT NULL,
-	item_asset int(11) unsigned DEFAULT '0' NOT NULL,
-	related int(11) unsigned DEFAULT '0' NOT NULL,
+	item_assets int(11) unsigned DEFAULT '0' NOT NULL,
+	related_items int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -54,6 +54,7 @@ CREATE TABLE tx_items_domain_model_category (
 
 
 	name varchar(255) DEFAULT '' NOT NULL,
+	parent_category int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -95,6 +96,10 @@ CREATE TABLE tx_items_domain_model_itemasset (
 
 	use_in_preview tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	add_as_download tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	override_name varchar(255) DEFAULT '' NOT NULL,
+	override_description varchar(255) DEFAULT '' NOT NULL,
+	override_copyright varchar(255) DEFAULT '' NOT NULL,
+	override_caption varchar(255) DEFAULT '' NOT NULL,
 	asset int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,

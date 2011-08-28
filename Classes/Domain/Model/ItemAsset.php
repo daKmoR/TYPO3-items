@@ -49,6 +49,34 @@ class Tx_Items_Domain_Model_ItemAsset extends Tx_Extbase_DomainObject_AbstractEn
 	protected $addAsDownload;
 
 	/**
+	 * overrideName
+	 *
+	 * @var string
+	 */
+	protected $overrideName;
+
+	/**
+	 * overrideDescription
+	 *
+	 * @var string
+	 */
+	protected $overrideDescription;
+
+	/**
+	 * overrideCopyright
+	 *
+	 * @var string
+	 */
+	protected $overrideCopyright;
+
+	/**
+	 * overrideCaption
+	 *
+	 * @var string
+	 */
+	protected $overrideCaption;
+
+	/**
 	 * asset
 	 *
 	 * @var Tx_Assets_Domain_Model_Asset
@@ -118,6 +146,82 @@ class Tx_Items_Domain_Model_ItemAsset extends Tx_Extbase_DomainObject_AbstractEn
 	 */
 	public function isAddAsDownload() {
 		return $this->getAddAsDownload();
+	}
+
+	/**
+	 * Returns the overrideName
+	 *
+	 * @return string $overrideName
+	 */
+	public function getOverrideName() {
+		return $this->overrideName;
+	}
+
+	/**
+	 * Sets the overrideName
+	 *
+	 * @param string $overrideName
+	 * @return void
+	 */
+	public function setOverrideName($overrideName) {
+		$this->overrideName = $overrideName;
+	}
+
+	/**
+	 * Returns the overrideDescription
+	 *
+	 * @return string $overrideDescription
+	 */
+	public function getOverrideDescription() {
+		return $this->overrideDescription;
+	}
+
+	/**
+	 * Sets the overrideDescription
+	 *
+	 * @param string $overrideDescription
+	 * @return void
+	 */
+	public function setOverrideDescription($overrideDescription) {
+		$this->overrideDescription = $overrideDescription;
+	}
+
+	/**
+	 * Returns the overrideCopyright
+	 *
+	 * @return string $overrideCopyright
+	 */
+	public function getOverrideCopyright() {
+		return $this->overrideCopyright;
+	}
+
+	/**
+	 * Sets the overrideCopyright
+	 *
+	 * @param string $overrideCopyright
+	 * @return void
+	 */
+	public function setOverrideCopyright($overrideCopyright) {
+		$this->overrideCopyright = $overrideCopyright;
+	}
+
+	/**
+	 * Returns the overrideCaption
+	 *
+	 * @return string $overrideCaption
+	 */
+	public function getOverrideCaption() {
+		return $this->overrideCaption;
+	}
+
+	/**
+	 * Sets the overrideCaption
+	 *
+	 * @param string $overrideCaption
+	 * @return void
+	 */
+	public function setOverrideCaption($overrideCaption) {
+		$this->overrideCaption = $overrideCaption;
 	}
 
 	/**
