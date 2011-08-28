@@ -150,7 +150,7 @@ $TCA['tx_items_domain_model_itemasset'] = array(
 			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_itemasset.asset',
 			'config' => array(
 				'type' => 'select',
-				'foreign_table' => 'tx_items_domain_model_asset',
+				'foreign_table' => 'tx_assets_domain_model_asset',
 				'minitems' => 0,
 				'maxitems' => 1,
 			),

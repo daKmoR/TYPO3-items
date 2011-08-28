@@ -1,3 +1,4 @@
+{namespace a=Tx_Assets_ViewHelpers}
 <f:layout name="Default" />
 
 This Template is responsible for creating a table of domain objects.
@@ -27,6 +28,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		<th><f:translate key="tx_items_domain_model_item.end_date_time" /></th>
 		<th> </th>
 		<th> </th>
+		<th> </th>
+		
 	</tr>
 
 	<f:for each="{items}" as="item">
@@ -39,6 +42,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<td><f:link.action action="show" arguments="{item : item}"> {item.endDateTime -> f:format.date()}</f:link.action></td>
 			<td><f:link.action action="edit" arguments="{item : item}">Edit</f:link.action></td>
 			<td><f:link.action action="delete" arguments="{item : item}">Delete</f:link.action></td>
+			<f:for each="{item.itemAssets}" as="itemAsset">
+			
+				<f:if condition="{itemAsset.asset -> a:isImage()}">
+					<td>{itemAsset.asset.name} IMAGE</td>
+				</f:if>
+				<f:if condition="{itemAsset.asset -> a:isYoutube()}">
+					<td>{itemAsset.asset.name} YouTube</td>
+				</f:if>
+				
+			</f:for>
 		</tr>
 	</f:for>
 </table>
