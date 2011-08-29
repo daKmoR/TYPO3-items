@@ -57,7 +57,8 @@ class Tx_Items_Controller_ItemController extends Tx_Extbase_MVC_Controller_Actio
 	 * @return void
 	 */
 	public function listAction() {
-		$items = $this->itemRepository->findAll();
+		//$items = $this->itemRepository->findAll();
+		$items = $this->itemRepository->findDemanded($this->settings);
 		$this->view->assign('items', $items);
 	}
 

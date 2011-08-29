@@ -1,60 +1,30 @@
 {namespace a=Tx_Assets_ViewHelpers}
 <f:layout name="Default" />
 
-This Template is responsible for creating a table of domain objects.
-
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        List.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
 <f:section name="main">
-<h1>Listing for Item</h1>
 
 <f:flashMessages />
-
-<table  class="tx_items" >
-	<tr>
-		<th><f:translate key="tx_items_domain_model_item.name" /></th>
-		<th><f:translate key="tx_items_domain_model_item.preview" /></th>
-		<th><f:translate key="tx_items_domain_model_item.body_text" /></th>
-		<th><f:translate key="tx_items_domain_model_item.priority_item" /></th>
-		<th><f:translate key="tx_items_domain_model_item.start_date_time" /></th>
-		<th><f:translate key="tx_items_domain_model_item.end_date_time" /></th>
-		<th> </th>
-		<th> </th>
-		<th> </th>
-		
-	</tr>
-
+<div class="itemList">
 	<f:for each="{items}" as="item">
-		<tr>
-			<td><f:link.action action="show" arguments="{item : item}"> {item.name}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{item : item}"> {item.preview}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{item : item}"> {item.bodyText}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{item : item}"> {item.priorityItem}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{item : item}"> {item.startDateTime -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{item : item}"> {item.endDateTime -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{item : item}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{item : item}">Delete</f:link.action></td>
-			<f:for each="{item.itemAssets}" as="itemAsset">
+		<div class="item">
+			<h2>{item.name}</h2>
+			<p class="startDateTime">{item.startDateTime -> f:format.date()}</p>
 			
+			<f:for each="{item.itemAssets}" as="itemAsset" iteration="itemAssetIterator">
 				<f:if condition="{itemAsset.asset -> a:isImage()}">
-					<td>{itemAsset.asset.name} IMAGE</td>
+					<f:render partial="ItemAsset/Image" arguments="{itemAsset: itemAsset, itemAssetIterator: itemAssetIterator}" />
 				</f:if>
 				<f:if condition="{itemAsset.asset -> a:isYoutube()}">
-					<td>{itemAsset.asset.name} YouTube</td>
+					<f:render partial="ItemAsset/YouTube" arguments="{itemAsset: itemAsset, itemAssetIterator: itemAssetIterator}" />
 				</f:if>
-				
 			</f:for>
-		</tr>
-	</f:for>
-</table>
 
-<f:link.action action="new">New Item</f:link.action>
+			<div class="text">
+				<f:cObject typoscriptObjectPath="lib.rteTransformation" data="{item.preview}" />
+			</div>
+		</div>
+	</f:for>
+</div>
+
+
 </f:section>

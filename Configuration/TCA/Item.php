@@ -9,7 +9,7 @@ $TCA['tx_items_domain_model_item'] = array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, preview, body_text, priority_item, start_date_time, end_date_time, categories, item_assets, related_items',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, preview, body_text, priority_item, start_date_time, end_date_time, categories, item_assets, related_items,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, preview, body_text;;2;richtext:rte_transform[flag=rte_enabled|mode=ts_css];4-4-4, priority_item, start_date_time, end_date_time, categories, item_assets, related_items,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -115,9 +115,9 @@ $TCA['tx_items_domain_model_item'] = array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_item.body_text',
 			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+				'type' => 'text',
+				'cols' => 30,
+				'rows' => 5
 			),
 		),
 		'priority_item' => array(
@@ -148,8 +148,8 @@ $TCA['tx_items_domain_model_item'] = array(
 				'size' => 12,
 				'max' => 20,
 				'eval' => 'datetime',
-				'checkbox' => 1,
-				'default' => time()
+				'checkbox' => 0,
+				'default' => 0
 			),
 		),
 		'categories' => array(

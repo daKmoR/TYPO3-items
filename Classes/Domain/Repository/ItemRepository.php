@@ -34,5 +34,17 @@
  */
 class Tx_Items_Domain_Repository_ItemRepository extends Tx_Extbase_Persistence_Repository {
 
+	/**
+	 * Finds all items that meets the settings.
+	 *
+	 * @param array $settings 
+	 * @return array Matched labors
+	 */
+	public function findDemanded($settings) {
+		$query = $this->createQuery();
+		$query->setOrderings($settings['orderings']);
+		return $query->execute();
+	}
+
 }
 ?>

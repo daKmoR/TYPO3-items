@@ -3,6 +3,10 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+	// Extension manager configuration
+$configurationArray = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]);
+
+
 Tx_Extbase_Utility_Extension::registerPlugin(
 	$_EXTKEY,
 	'Items',
@@ -37,6 +41,8 @@ $TCA['tx_items_domain_model_item'] = array(
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
+		'default_sortby' => 'ORDER BY start_date_time DESC',
+		'sortby' => ($configurationArray['manualSorting'] == 1 ? 'sorting' : ''),
 		'delete' => 'deleted',
 		'enablecolumns' => array(
 			'disabled' => 'hidden',

@@ -151,7 +151,7 @@ class Tx_Items_Domain_Model_Item extends Tx_Extbase_DomainObject_AbstractEntity 
 	 * @return string $preview
 	 */
 	public function getPreview() {
-		return $this->preview;
+		return $this->preview ? $this->preview : $this->getBodyText();
 	}
 
 	/**
