@@ -3,12 +3,11 @@
 
 <f:section name="main">
 
-<f:flashMessages />
-<div class="itemList">
+<div class="itemsList">
 	<f:for each="{items}" as="item">
 		<div class="item">
 			<h2>{item.name}</h2>
-			<p class="startDateTime">{item.startDateTime -> f:format.date()}</p>
+			<p class="start">{item.start -> f:format.date(format: 'd.m.Y')}</p>
 			
 			<f:for each="{item.itemAssets}" as="itemAsset" iteration="itemAssetIterator">
 				<f:if condition="{itemAsset.asset -> a:isImage()}">
@@ -20,7 +19,7 @@
 			</f:for>
 
 			<div class="text">
-				<f:cObject typoscriptObjectPath="lib.rteTransformation" data="{item.preview}" />
+				<f:format.html>{item.preview}</f:format.html>
 			</div>
 		</div>
 	</f:for>

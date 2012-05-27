@@ -41,7 +41,7 @@ $TCA['tx_items_domain_model_item'] = array(
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
-		'default_sortby' => 'ORDER BY start_date_time DESC',
+		'default_sortby' => 'ORDER BY start DESC',
 		'sortby' => ($configurationArray['manualSorting'] == 1 ? 'sorting' : ''),
 		'delete' => 'deleted',
 		'enablecolumns' => array(
@@ -78,33 +78,6 @@ $TCA['tx_items_domain_model_category'] = array(
 		),
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/Category.php',
 		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_items_domain_model_category.gif'
-	),
-);
-
-t3lib_extMgm::addLLrefForTCAdescr('tx_items_domain_model_itemasset', 'EXT:items/Resources/Private/Language/locallang_csh_tx_items_domain_model_itemasset.xml');
-t3lib_extMgm::allowTableOnStandardPages('tx_items_domain_model_itemasset');
-$TCA['tx_items_domain_model_itemasset'] = array(
-	'ctrl' => array(
-		'title'	=> 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_itemasset',
-		'label' => 'use_in_preview',
-		'tstamp' => 'tstamp',
-		'crdate' => 'crdate',
-		'cruser_id' => 'cruser_id',
-		'dividers2tabs' => TRUE,
-		'versioningWS' => 2,
-		'versioning_followPages' => TRUE,
-		'origUid' => 't3_origuid',
-		'languageField' => 'sys_language_uid',
-		'transOrigPointerField' => 'l10n_parent',
-		'transOrigDiffSourceField' => 'l10n_diffsource',
-		'delete' => 'deleted',
-		'enablecolumns' => array(
-			'disabled' => 'hidden',
-			'starttime' => 'starttime',
-			'endtime' => 'endtime',
-		),
-		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/ItemAsset.php',
-		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_items_domain_model_itemasset.gif'
 	),
 );
 

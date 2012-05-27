@@ -42,7 +42,22 @@ class Tx_Items_Domain_Repository_ItemRepository extends Tx_Extbase_Persistence_R
 	 */
 	public function findDemanded($settings) {
 		$query = $this->createQuery();
+		
+		$constraints = array();
+		
+		if ($settings['showOnlyFutureItems']) {
+			$constraints[] = $query->logicalOr(
+				$query->greaterThan('start', mktime()),
+				$query->greaterThan('end', mktime())
+			);
+		}
+		
+		if (count($constraints) > 0) {
+			$query->matching($query->logicalAnd($constraints));
+		}
+		
 		$query->setOrderings($settings['orderings']);
+		$query->setLimit((int) $settings['limit']);
 		return $query->execute();
 	}
 

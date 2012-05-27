@@ -64,18 +64,18 @@ class Tx_Items_Domain_Model_Item extends Tx_Extbase_DomainObject_AbstractEntity 
 	protected $priorityItem;
 
 	/**
-	 * startDateTime
+	 * start
 	 *
 	 * @var DateTime
 	 */
-	protected $startDateTime;
+	protected $start;
 
 	/**
-	 * endDateTime
+	 * end
 	 *
 	 * @var DateTime
 	 */
-	protected $endDateTime;
+	protected $end;
 
 	/**
 	 * categories
@@ -212,41 +212,41 @@ class Tx_Items_Domain_Model_Item extends Tx_Extbase_DomainObject_AbstractEntity 
 	}
 
 	/**
-	 * Returns the startDateTime
+	 * Returns the start
 	 *
-	 * @return DateTime $startDateTime
+	 * @return DateTime $start
 	 */
-	public function getStartDateTime() {
-		return $this->startDateTime;
+	public function getStart() {
+		return $this->start;
 	}
 
 	/**
-	 * Sets the startDateTime
+	 * Sets the start
 	 *
-	 * @param DateTime $startDateTime
+	 * @param DateTime $start
 	 * @return void
 	 */
-	public function setStartDateTime($startDateTime) {
-		$this->startDateTime = $startDateTime;
+	public function setStart($start) {
+		$this->start = $start;
 	}
 
 	/**
-	 * Returns the endDateTime
+	 * Returns the end
 	 *
-	 * @return DateTime $endDateTime
+	 * @return DateTime $end
 	 */
-	public function getEndDateTime() {
-		return $this->endDateTime;
+	public function getEnd() {
+		return $this->end;
 	}
 
 	/**
-	 * Sets the endDateTime
+	 * Sets the end
 	 *
-	 * @param DateTime $endDateTime
+	 * @param DateTime $end
 	 * @return void
 	 */
-	public function setEndDateTime($endDateTime) {
-		$this->endDateTime = $endDateTime;
+	public function setEnd($end) {
+		$this->end = $end;
 	}
 
 	/**

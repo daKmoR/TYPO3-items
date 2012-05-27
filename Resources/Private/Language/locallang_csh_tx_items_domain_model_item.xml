@@ -11,8 +11,8 @@
 			<label index="preview.description">preview</label>
 			<label index="body_text.description">bodyText</label>
 			<label index="priority_item.description">priorityItem</label>
-			<label index="start_date_time.description">startDateTime</label>
-			<label index="end_date_time.description">endDateTime</label>
+			<label index="start.description">start</label>
+			<label index="end.description">end</label>
 			<label index="categories.description">categories</label>
 			<label index="item_assets.description">itemAssets</label>
 			<label index="related_items.description">relatedItems</label>

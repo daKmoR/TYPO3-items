@@ -14,11 +14,11 @@
 	<f:translate key="tx_items_domain_model_item.priority_item" />
 </label><br />
 	<f:form.checkbox property="priorityItem" value="1" /><br />
-<label for="startDateTime">
-	<f:translate key="tx_items_domain_model_item.start_date_time" />
+<label for="start">
+	<f:translate key="tx_items_domain_model_item.start" />
 </label><br />
-	<f:form.textfield property="startDateTime"  value="{item.startDateTime->f:format.date()}" /><br />
-<label for="endDateTime">
-	<f:translate key="tx_items_domain_model_item.end_date_time" />
+	<f:form.textfield property="start"  value="{item.start->f:format.date()}" /><br />
+<label for="end">
+	<f:translate key="tx_items_domain_model_item.end" />
 </label><br />
-	<f:form.textfield property="endDateTime"  value="{item.endDateTime->f:format.date()}" /><br />
+	<f:form.textfield property="end"  value="{item.end->f:format.date()}" /><br />

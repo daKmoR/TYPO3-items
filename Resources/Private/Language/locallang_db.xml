@@ -11,22 +11,14 @@
 			<label index="tx_items_domain_model_item.preview">Preview</label>
 			<label index="tx_items_domain_model_item.body_text">Body Text</label>
 			<label index="tx_items_domain_model_item.priority_item">Priority Item</label>
-			<label index="tx_items_domain_model_item.start_date_time">Start Date Time</label>
-			<label index="tx_items_domain_model_item.end_date_time">End Date Time</label>
+			<label index="tx_items_domain_model_item.start">Start</label>
+			<label index="tx_items_domain_model_item.end">End</label>
 			<label index="tx_items_domain_model_item.categories">Categories</label>
 			<label index="tx_items_domain_model_item.item_assets">Item Assets</label>
 			<label index="tx_items_domain_model_item.related_items">Related Items</label>
 			<label index="tx_items_domain_model_category">Category</label>
 			<label index="tx_items_domain_model_category.name">Name</label>
 			<label index="tx_items_domain_model_category.parent_category">Parent Category</label>
-			<label index="tx_items_domain_model_itemasset">Item Asset</label>
-			<label index="tx_items_domain_model_itemasset.use_in_preview">Use In Preview</label>
-			<label index="tx_items_domain_model_itemasset.add_as_download">Add As Download</label>
-			<label index="tx_items_domain_model_itemasset.override_name">Override Name</label>
-			<label index="tx_items_domain_model_itemasset.override_description">Override Description</label>
-			<label index="tx_items_domain_model_itemasset.override_copyright">Override Copyright</label>
-			<label index="tx_items_domain_model_itemasset.override_caption">Override Caption</label>
-			<label index="tx_items_domain_model_itemasset.asset">Asset</label>
 			<label index="tx_items_domain_model_asset">Asset</label>
 		</languageKey>
 	</data>

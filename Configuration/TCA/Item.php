@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_items_domain_model_item'] = array(
 	'ctrl' => $TCA['tx_items_domain_model_item']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, preview, body_text, priority_item, start_date_time, end_date_time, categories, item_assets, related_items',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, preview, body_text, priority_item, start, end, categories, item_assets, related_items',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, preview, body_text;;2;richtext:rte_transform[flag=rte_enabled|mode=ts_css];4-4-4, priority_item, start_date_time, end_date_time, categories, item_assets, related_items,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, preview, body_text;;2;richtext:rte_transform[flag=rte_enabled|mode=ts_css];4-4-4, priority_item, start, end, categories, item_assets, related_items,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -128,9 +128,9 @@ $TCA['tx_items_domain_model_item'] = array(
 				'default' => 0
 			),
 		),
-		'start_date_time' => array(
+		'start' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_item.start_date_time',
+			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_item.start',
 			'config' => array(
 				'type' => 'input',
 				'size' => 12,
@@ -140,9 +140,9 @@ $TCA['tx_items_domain_model_item'] = array(
 				'default' => time()
 			),
 		),
-		'end_date_time' => array(
+		'end' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_item.end_date_time',
+			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_item.end',
 			'config' => array(
 				'type' => 'input',
 				'size' => 12,
@@ -193,7 +193,7 @@ $TCA['tx_items_domain_model_item'] = array(
 			'label' => 'LLL:EXT:items/Resources/Private/Language/locallang_db.xml:tx_items_domain_model_item.item_assets',
 			'config' => array(
 				'type' => 'inline',
-				'foreign_table' => 'tx_items_domain_model_itemasset',
+				'foreign_table' => 'tx_assets_domain_model_standardasset',
 				'foreign_field' => 'item',
 				'maxitems'      => 9999,
 				'appearance' => array(

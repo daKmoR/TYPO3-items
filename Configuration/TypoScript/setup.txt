@@ -7,21 +7,27 @@ plugin.tx_items {
 	persistence {
 		storagePid = 
 		classes < plugin.tx_assets.persistence.classes
+		classes {
+			Tx_Assets_Domain_Model_StandardAsset {
+				subclasses {
+					Tx_Items_Domain_Model_ItemAsset = Tx_Items_Domain_Model_ItemAsset
+				}
+			}
+			Tx_Items_Domain_Model_ItemAsset {
+				mapping {
+					tableName = tx_assets_domain_model_standardasset
+				}
+			}
+		}
 	}
 	settings {
 		orderings {
-			startDateTime = ASC
+			start = ASC
 		}
+		limit = 5
+		showOnlyFutureItems = 0
 	}
 	
-}
-
-lib.rteTransformation = COA
-lib.rteTransformation {
-	10 = TEXT
-	10.current = 1
-	10.parseFunc < lib.parseFunc_RTE
-	10.parseFunc_RTE < lib.parseFunc_RTE
 }
 
 plugin.tx_items._CSS_DEFAULT_STYLE (
